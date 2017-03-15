@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sleep 10
+create_ap wlan0 eth1 nutsboard-ap qwerty0987 &
+
+sleep 1
+insmod /lib/modules/$(uname -r)/kernel/drivers/misc/ti-st/st_drv.ko
+insmod /lib/modules/$(uname -r)/kernel/drivers/bluetooth/btwilink.ko
+sleep 1
+uim &
